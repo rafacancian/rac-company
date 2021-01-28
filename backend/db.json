@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Rafael Cancian 01",
+      "email": "cancian01@example.com"
+    },
+    {
+      "id": 2,
+      "name": " Rafael Cancian 02",
+      "email": "cancian02@example.com"
+    },
+    {
+      "id": 3,
+      "name": " Rafael Cancian 03",
+      "email": "cancian03@example.com"
+    },
+    {
+      "id": 4,
+      "name": " Rafael Cancian 04",
+      "email": "cancian04@example.com"
+    }
+  ]
+}
