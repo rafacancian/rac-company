@@ -10,7 +10,8 @@ aside.menu-area {
     text-decoration: none;
     color: #FFF;
     font-weight: 300;
-    padding: 15px;
+    padding: 10px;
+    padding-left: 20px;
 }
 
 .menu a:hover {

@@ -3,18 +3,18 @@ import axios from 'axios'
 import Main from '../template/Main'
 
 const headerProps = {
-    icon: 'users',
-    title: 'Users',
-    subtitle: 'User form system create to join all the exists contacts from the company'
+    icon: 'suppliers',
+    title: 'Suppliers',
+    subtitle: 'Supplier form system create to join all the exists contacts from the company'
 }
 
-const baseUrl = 'http://localhost:3001/users'
+const baseUrl = 'http://localhost:3001/suppliers'
 const initialState = {
-    user: { name: '', email: '', cpf: '', phone: '', address: '' },
+    supplier: { name: '', email: '', cnpj: '', phone: '', address: '' },
     list: []
 }
 
-export default class UserCrud extends Component {
+export default class SupplierCrud extends Component {
 
     state = { ...initialState }
 
@@ -25,30 +25,30 @@ export default class UserCrud extends Component {
     }
 
     clear() {
-        this.setState({ user: initialState.user })
+        this.setState({ suppliers: initialState.supplier })
     }
 
     save() {
-        const user = this.state.user
-        const method = user.id ? 'put' : 'post'
-        const url = user.id ? `${baseUrl}/${user.id}` : baseUrl
-        axios[method](url, user)
+        const supplier = this.state.supplier
+        const method = supplier.id ? 'put' : 'post'
+        const url = supplier.id ? `${baseUrl}/${supplier.id}` : baseUrl
+        axios[method](url, supplier)
             .then(resp => {
                 const list = this.getUpdatedList(resp.data)
-                this.setState({ user: initialState.user, list })
+                this.setState({ supplier: initialState.supplier, list })
             })
     }
 
-    getUpdatedList(user, add = true) {
-        const list = this.state.list.filter(u => u.id !== user.id)
-        if(add) list.unshift(user)
+    getUpdatedList(supplier, add = true) {
+        const list = this.state.list.filter(u => u.id !== supplier.id)
+        if(add) list.unshift(supplier)
         return list
     }
 
     updateField(event) {
-        const user = { ...this.state.user }
-        user[event.target.name] = event.target.value
-        this.setState({ user })
+        const supplier = { ...this.state.supplier }
+        supplier[event.target.name] = event.target.value
+        this.setState({ supplier })
     }
 
     renderForm() {
@@ -60,7 +60,7 @@ export default class UserCrud extends Component {
                             <label>Nome:</label>
                             <input type="text" className="form-control"
                                 name="name"
-                                value={this.state.user.name}
+                                value={this.state.supplier.name}
                                 onChange={e => this.updateField(e)}
                                 placeholder="Digit the name..." />
                         </div>
@@ -71,7 +71,7 @@ export default class UserCrud extends Component {
                             <label>Email:</label>
                             <input type="text" className="form-control"
                                 name="email"
-                                value={this.state.user.email}
+                                value={this.state.supplier.email}
                                 onChange={e => this.updateField(e)}
                                 placeholder="Digit the e-mail..." />
                         </div>
@@ -79,10 +79,10 @@ export default class UserCrud extends Component {
 
                     <div className="col-12 col-md-3">
                         <div className="form-group">
-                            <label>CPF:</label>
+                            <label>CNPJ:</label>
                             <input type="text" className="form-control"
-                                name="cpf"
-                                value={this.state.user.cpf}
+                                name="cpnf"
+                                value={this.state.supplier.cnpj}
                                 onChange={e => this.updateField(e)}
                                 placeholder="Digit the document..." />
                         </div>
@@ -93,7 +93,7 @@ export default class UserCrud extends Component {
                             <label>Phone number:</label>
                             <input type="text" className="form-control"
                                 name="phone"
-                                value={this.state.user.phone}
+                                value={this.state.supplier.phone}
                                 onChange={e => this.updateField(e)}
                                 placeholder="Digit the phone..." />
                         </div>
@@ -104,7 +104,7 @@ export default class UserCrud extends Component {
                             <label>Address:</label>
                             <input type="text" className="form-control"
                                 name="address"
-                                value={this.state.user.address}
+                                value={this.state.supplier.address}
                                 onChange={e => this.updateField(e)}
                                 placeholder="Digit the address..." />
                         </div>
@@ -129,13 +129,13 @@ export default class UserCrud extends Component {
         )
     }
 
-    load(user) {
-        this.setState({ user })
+    load(supplier) {
+        this.setState({ supplier })
     }
 
-    remove(user) {
-        axios.delete(`${baseUrl}/${user.id}`).then(resp => {
-            const list = this.getUpdatedList(user, false)
+    remove(supplier) {
+        axios.delete(`${baseUrl}/${supplier.id}`).then(resp => {
+            const list = this.getUpdatedList(supplier, false)
             this.setState({ list })
         })
     }
@@ -148,7 +148,7 @@ export default class UserCrud extends Component {
                         <th>ID</th>
                         <th>Name</th>
                         <th>E-mail</th>
-                        <th>CPF</th>
+                        <th>CNPJ</th>
                         <th>Phone</th>
                         <th>Address</th>
                         <th>Actions</th>
@@ -162,22 +162,22 @@ export default class UserCrud extends Component {
     }
 
     renderRows() {
-        return this.state.list.map(user => {
+        return this.state.list.map(supplier => {
             return (
-                <tr key={user.id}>
-                    <td>{user.id}</td>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    <td>{user.cpf}</td>
-                    <td>{user.phone}</td>
-                    <td>{user.address}</td>
+                <tr key={supplier.id}>
+                    <td>{supplier.id}</td>
+                    <td>{supplier.name}</td>
+                    <td>{supplier.email}</td>
+                    <td>{supplier.cnpj}</td>
+                    <td>{supplier.phone}</td>
+                    <td>{supplier.address}</td>
                     <td>
                         <button className="btn btn-warning"
-                            onClick={() => this.load(user)}>
+                            onClick={() => this.load(supplier)}>
                             <i className="fa fa-pencil"></i>
                         </button>
                         <button className="btn btn-danger ml-2"
-                            onClick={() => this.remove(user)}>
+                            onClick={() => this.remove(supplier)}>
                             <i className="fa fa-trash"></i>
                         </button>
                     </td>

@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom'
 export default props =>
     <aside className="menu-area">
         <nav className="menu">
-            {/* Refatorar em casa! */}
+
             <Link to="/">
-                <i className="fa fa-home"></i> Início
+                <i className="fa fa-home"></i> Home
             </Link>
             <Link to="/users">
-                <i className="fa fa-users"></i> Usuários
+                <i className="fa fa-users"></i> Users
+            </Link>
+            <Link to="/suppliers">
+                <i className="fa fa-handshake-o"></i> Suppliers
             </Link>
         </nav>
     </aside>
