@@ -3,7 +3,7 @@ import axios from 'axios'
 import Main from '../template/Main'
 
 const headerProps = {
-    icon: 'suppliers',
+    icon: 'handshake-o',
     title: 'Suppliers',
     subtitle: 'Supplier form system create to join all the exists contacts from the company'
 }
