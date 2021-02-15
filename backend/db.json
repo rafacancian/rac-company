@@ -33,7 +33,6 @@
       "address": "Parque das nações - moscavide 444"
     }
   ],
-  
   "suppliers": [
     {
       "id": 1,
@@ -50,22 +49,6 @@
       "cnpj": "222.222.222/0002-2",
       "phone": "+351 222222222",
       "address": "Parque das nações - moscavide 222"
-    },
-    {
-      "id": 3,
-      "name": " Rafael Cancian 03",
-      "email": "cancian03@example.com",
-      "cnpj": "333.333.333/0003-3",
-      "phone": "+351 333333333",
-      "address": "Parque das nações - moscavide 333"
-    },
-    {
-      "id": 4,
-      "name": " Rafael Cancian 04",
-      "email": "cancian04@example.com",
-      "cnpj": "444.444.444/0004-4",
-      "phone": "+351 444444444",
-      "address": "Parque das nações - moscavide 444"
     }
   ]
 }
