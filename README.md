@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/rafacancian/my-money-manager">
-    <img width="400px" src="#" alt="My money manager Logo">
+    <img width="400px" src="#" alt="RAC Company Logo">
   </a>
 </p>
 
@@ -29,7 +29,8 @@ Frontend
 ---
 
 ## Screenshots 
-![](https://github.com/rafacancian/rac-company/blob/main/pictures/dashboard.JPG)
+![](https://github.com/rafacancian/rac-company/blob/main/pictures/users.JPG)
+![](https://github.com/rafacancian/rac-company/blob/main/pictures/suppliers.JPG)
 
 ---
 
