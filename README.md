@@ -6,7 +6,7 @@
   </a>
 </p>
 
-Project create to manager company 
+Sistema de gestão empresarial. Com ele você pode fazer Cadastro de Clientes e Fornecedores
 
 ---
 
