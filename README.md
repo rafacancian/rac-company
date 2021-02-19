@@ -66,7 +66,7 @@ https://adminlte.io/themes/AdminLTE/index2.html
 
 ## TODO
 
-- :heavy_check_mark: ~~backend authentication~~ 
+- :heavy_check_mark: backend authentication 
 - :ballot_box_with_check: frontend authentication
 
 
